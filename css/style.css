@@ -79,6 +79,15 @@ ul {
     color: var(--main-gold);
     margin: 0 0 30px;
 }
+@keyframes glow {
+    0%, 100% { text-shadow: 0 0 10px var(--main-gold); }
+    50% { text-shadow: 0 0 20px var(--main-gold); }
+  }
+  .landing .land h1 {
+    animation: glow 2s ease-in-out infinite;
+    -webkit-animation: glow 2s ease-in-out infinite;
+}
+  
 @media (max-width: 767px) {
     .landing .land h1 {
         font-size: 2.5em;
@@ -129,8 +138,8 @@ ul {
     -moz-transition: var(--main-transition);
     -ms-transition: var(--main-transition);
     -o-transition: var(--main-transition);
-    animation: light-up .7s 1.5s linear;
-    -webkit-animation: light-up .7s 1.5s linear;
+    animation: light-up .7s 2s linear;
+    -webkit-animation: light-up .7s 2s linear;
 }
 .landing .land a:hover {
     color: white;
@@ -246,6 +255,7 @@ ul {
     -o-transition: var(--main-transition) ease-in-out;
 }
 .section .card:hover {
+    box-shadow: 0 0 25px rgba(240, 193, 75, 0.3);
     border: 1px solid #f0d642;
     transform: translateY(-10px);
     -webkit-transform: translateY(-10px);
@@ -312,7 +322,7 @@ ul {
 }
 .section .card .info q {
     display: block;
-    color: #8a8a8a;
+    color: #a0a0a0;
     margin: 15px auto;
     line-height: 2;
     max-width: 300px;
@@ -354,6 +364,7 @@ ul {
     background: #000;
     border-top: 1px solid #111;
     padding: 40px;
+    border-top: 1px solid var(--main-gold);
 }
 .footer p {
     color: #8f8f8f;
