@@ -4,6 +4,7 @@
 }
 :root {
     --main-transition: .3s;
+    --main-gold: #f0c14b; /* درجة ذهبية دافئة وواضحة */
 }
 html {
     scroll-behavior: smooth;
@@ -11,6 +12,8 @@ html {
 }
 body {
     font-family: 'Poppins', sans-serif;
+    animation: fade-in 1s linear forwards;
+    -webkit-animation: fade-in 1s linear forwards;
 }
 a {
     text-decoration: none;
@@ -72,7 +75,8 @@ ul {
     font-size: 4em;
     font-weight: 700;
     text-transform: uppercase;
-    color: #e69e18;
+    /* color: #e69e18; */
+    color: var(--main-gold);
     margin: 0 0 30px;
 }
 @media (max-width: 767px) {
@@ -112,18 +116,27 @@ ul {
     }
 }
 .landing .land a {
-    color: #e69e18;
-    border: 2px solid #e69e18;
+    /*color: #e69e18;
+    */color: var(--main-gold);
+    border: 2px solid;
+    font-weight: 700;
     font-size: 1em;
     padding: 10px 20px;
     margin: 0 0 30px;
     border-radius: 5px;
     transition: var(--main-transition);
+    -webkit-transition: var(--main-transition);
+    -moz-transition: var(--main-transition);
+    -ms-transition: var(--main-transition);
+    -o-transition: var(--main-transition);
+    animation: light-up .7s 1.5s linear;
+    -webkit-animation: light-up .7s 1.5s linear;
 }
 .landing .land a:hover {
-    color: #111111;
-    background: #e69e18;
-    box-shadow: 0 0 10px #e69e18;
+    color: white;
+    background: var(--main-gold);
+    box-shadow: 0 0 10px var(--main-gold);
+    border: 2px solid var(--main-gold);
 }
 @media (max-width: 767px) {
     .landing .land a {
@@ -165,6 +178,7 @@ ul {
     z-index: 1;
     position: relative;
     transition: var(--main-transition);
+    cursor: default;
 }
 .section h2.main-heading:hover {
     transition-delay: .5s;
@@ -211,13 +225,13 @@ ul {
 }
 .section .container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     justify-content: center;
     gap: 40px;
 }
 .section .card {
     text-align: center;
-    background: #111111;
+    background: linear-gradient(145deg, #0d0d0d, #1a1a1a);
     padding: 30px 25px;
     border: 1px solid #333;
     border-radius: 10px;
@@ -246,6 +260,12 @@ ul {
     width: 200px;
     position: relative;
     margin: 0 auto;
+    border: 2px solid #f0d642;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
 }
 .section .card .image::before {
     content: '';
@@ -262,16 +282,27 @@ ul {
     -moz-transition: var(--main-transition) linear;
     -ms-transition: var(--main-transition) linear;
     -o-transition: var(--main-transition) linear;
+    z-index: 1;
 }
 .section .card:hover .image::before {
     opacity: 0;
 }
+.card:hover img {
+    filter: brightness(1.1);
+    transform: scale(1.05);
+    -webkit-filter: brightness(1.1);
+}
+
 .section .card img {
     height: 200px;
     width: 200px;
     object-fit: cover;
-    border: 2px solid #f0d642;
     border-radius: 50%;
+    transition: var(--main-transition);
+    -webkit-transition: var(--main-transition);
+    -moz-transition: var(--main-transition);
+    -ms-transition: var(--main-transition);
+    -o-transition: var(--main-transition);
 }
 .section .card .info h3 {
     color: white;
@@ -281,7 +312,7 @@ ul {
 }
 .section .card .info q {
     display: block;
-    color: #777;
+    color: #8a8a8a;
     margin: 15px auto;
     line-height: 2;
     max-width: 300px;
@@ -290,10 +321,9 @@ ul {
     -moz-transition: var(--main-transition);
     -ms-transition: var(--main-transition);
     -o-transition: var(--main-transition);
-    font-style: italic;
 }
 .section .card:hover .info q {
-    color: #f0a542;
+    color: #f7c750;
 }
 .section .card .social i {
     color: wheat;
@@ -330,6 +360,24 @@ ul {
 }
 /* End Footer */
 /* Start Animation */
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+        -webkit-transform: translatey(10px);
+        -moz-transform: translatey(10px);
+        -ms-transform: translatey(10px);
+        -o-transform: translatey(10px);
+}
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        -webkit-transform: translateY(0);
+        -moz-transform: translateY(0);
+        -ms-transform: translateY(0);
+        -o-transform: translateY(0);
+}
+}
 @keyframes move-right {
     50% {
         left: 0;
@@ -372,14 +420,17 @@ ul {
         opacity: 1;
     }
 }
-@keyframes qoute {
-    from {
-        width: 100px;
-        opacity: 0;
+@keyframes light-up {
+    0% {
+        color: var(--main-gold);
     }
-    to {
-        opacity: 1;
-        width: 282.92px;
+    50% {
+        color: white;
+        background: var(--main-gold);
+        border-color: var(--main-gold);
+    }
+    100% {
+        color: var(--main-gold);
     }
 }
 /* End Animation */
