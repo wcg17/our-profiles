@@ -294,6 +294,19 @@ ul {
     -o-transition: var(--main-transition) linear;
     z-index: 1;
 }
+.section .card:nth-child(13) .image:before {
+        background: conic-gradient(
+        red,
+        orange,
+        yellow,
+        green,
+        cyan,
+        blue,
+        violet,
+        red
+    );
+    opacity: .4;
+}
 .section .card:hover .image::before {
     opacity: 0;
 }
@@ -445,3 +458,4 @@ ul {
     }
 }
 /* End Animation */
+
