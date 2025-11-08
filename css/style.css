@@ -61,7 +61,9 @@ h1 {
     font-size: 4em;
     font-weight: 700;
     /* color: #e69e18; */
-    color: var(--main-gold);
+	text-transform: uppercase;
+	color: #333;
+	
 	
 }
 /* Start Landing */
@@ -457,5 +459,6 @@ h1 {
     }
 }
 /* End Animation */
+
 
 
