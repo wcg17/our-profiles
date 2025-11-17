@@ -275,7 +275,12 @@ ul {
     -ms-transform: translateY(-10px);
     -o-transform: translateY(-10px);
 }
-/* background-color: rgba(240, 214, 66, 0.3); */
+@media (min-width: 1200px) {
+    .section .card:last-child {
+        position: relative;
+        left: 111%;
+    }
+}
 .section .card .image {
     overflow: hidden;
     height: 200px;
@@ -469,4 +474,5 @@ ul {
         top: auto;
     }
 }
+
 /* End Animation */
