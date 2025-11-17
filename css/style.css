@@ -54,7 +54,8 @@ ul {
 /* End Global Rules */
 /* Start Landing */
 .landing {
-    height: 98vh;
+    height: 100dvh;
+    height: 100vh;
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -476,3 +477,4 @@ ul {
 }
 
 /* End Animation */
+
